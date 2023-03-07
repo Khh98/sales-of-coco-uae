@@ -1,4 +1,3 @@
-from streamlit_login_auth_ui.widgets import __login__
 import streamlit as st
 from streamlit_extras.app_logo import add_logo
 from streamlit_extras.mention import mention
