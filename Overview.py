@@ -11,7 +11,7 @@ st.set_page_config(
      page_icon= pacclogo,
     initial_sidebar_state="expanded")
 
-add_logo(pacclogo,height=190)
+add_logo(pacclogo,height=190,url="https://mdspacc.ae/")
 
 col1, col2 = st.columns([6,1])
 with col1:
