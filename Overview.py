@@ -23,65 +23,68 @@ with col2:
   if start:
     switch_page("Homepage")
 html_code= """
-<html data-wf-domain="interactive-sky.webflow.io" data-wf-page="5d971c4989c88c6dcbca55ce" data-wf-site="5d971c4989c88c0b4cca55cd">
-    <head>
-        <meta charset="utf-8"/>
-        <title> Hello</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta content="Webflow" name="generator"/>
-        <link href="https://assets.website-files.com/5d971c4989c88c0b4cca55cd/css/interactive-sky.webflow.c473bcb3c.css" rel="stylesheet" type="text/css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            WebFont.load({
-                google: {
-                    families: ["Verdana:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"]
-                }
-            });
-        </script>
-        <script type="text/javascript">
-            !function(o, c) {
-                var n = c.documentElement
-                  , t = " w-mod-";
-                n.className += t + "js",
-                ("ontouchstart"in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
-            }(window, document);
-        </script>
-        <link href="https://assets.website-files.com/img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
-        <link href="https://assets.website-files.com/img/webclip.png" rel="apple-touch-icon"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
     <style>
-            .text-block {
-                 text-align: center;
-                 margin-top: 5px;
-}
-            h1:first-child {
-                font-size: 2rem;
-            }
-        </style>
-           <div id= 'demo' class = 'wrapper'>
-            <h1>Hello, I'm</h1>
-            <h1>Karim Hazimeh</h1>
-            <div class="text-block" style="font-family:Lucida Console"><br>a Data detective with a Masters in Business Analytics🕵🏻‍♀️.</br>I am passionate about utilizing my tech-savviness and business analytics expertise to uncover insights from data that guide end-users through the vast and ever-changing <b>sky of possibilities.<b></div>
-            <br><a href="https://drive.google.com/uc?export=download&id=1__wsAULlJ3uoAYil0B77UODwsgWeEF5x" download><button style="background-color: white; color: #222; font-weight: bold; border: 2px solid #222; padding: 10px 20px; border-radius: 5px;">Download CV</button></a></br>
-        </div>
-    </head>
-    <body>
-        <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="https://assets.website-files.com/5d971c4989c88c0b4cca55cd/js/webflow.1bc56dc86.js" type="text/javascript"></script>
-        <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
-        <script src="https://assets.website-files.com/5d932bf11608325eac058a21/5d932d68160832c7c0059c91_three.r92.min.txt"></script>
-        <script src="https://assets.website-files.com/5d932bf11608325eac058a21/5d93301de2a4d93ad0b1fe54_vanta.clouds.min.txt"></script>
-        <script>
-            VANTA.CLOUDS({
-                el: "#demo",
-                skyColor: 0x5eb7d9,
-                cloudColor: 0xb1c2dc,
-                cloudShadowColor: 0x1b3a57,
-                sunColor: 0xff9c21,
-                sunGlareColor: 0xfa6331,
-                sunlightColor: 0xfa9531
-            })
-        </script>
-    </body>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #demo {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #5eb7d9;
+            color: white;
+            font-family: Verdana, sans-serif;
+        }
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        .text-block {
+            text-align: center;
+            margin-top: 5px;
+        }
+        button {
+            background-color: white;
+            color: #222;
+            font-weight: bold;
+            border: 2px solid #222;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo">
+        <h1>Hello, I'm</h1>
+        <h1>Karim Hazimeh</h1>
+        <div class="text-block">a Data detective with a Masters in Business Analytics🕵🏻‍♀️.<br>I am passionate about utilizing my tech-savviness and business analytics expertise to uncover insights from data that guide end-users through the vast and ever-changing <b>sky of possibilities.</b></div>
+        <br><a href="https://drive.google.com/uc?export=download&id=1__wsAULlJ3uoAYil0B77UODwsgWeEF5x" download><button>Download CV</button></a></br>
+    </div>
+    <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://assets.website-files.com/5d971c4989c88c0b4cca55cd/js/webflow.1bc56dc86.js" type="text/javascript"></script>
+    <script src="https://assets.website-files.com/5d932bf11608325eac058a21/5d932d68160832c7c0059c91_three.r92.min.txt"></script>
+    <script src="https://assets.website-files.com/5d932bf11608325eac058a21/5d93301de2a4d93ad0b1fe54_vanta.clouds.min.txt"></script>
+    <script>
+        VANTA.CLOUDS({
+            el: "#demo",
+            skyColor: 0x5eb7d9,
+            cloudColor: 0xb1c2dc,
+            cloudShadowColor: 0x1b3a57,
+            sunColor: 0xff9c21,
+            sunGlareColor: 0xfa6331,
+            sunlightColor: 0xfa9531
+        })
+    </script>
+</body>
 </html>
 
         """
