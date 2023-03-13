@@ -9,7 +9,6 @@ from prophet.plot import plot_plotly, plot_components_plotly
 from streamlit_toggle import st_toggle_switch
 from streamlit_extras.app_logo import add_logo
 from streamlit_card import card
-from streamlit_extras.badges import badge
 
 url1="https://drive.google.com/file/d/12NQM8wBzIl3XwJqAGLZnZ3r3El9A6hyq/view?usp=sharing"
 pacclogo='https://drive.google.com/uc?export=download&id='+url1.split('/')[-2]
@@ -119,7 +118,6 @@ forecast_horizon = st.sidebar.selectbox('Select forecast horizon (in months):', 
 # Get user input for hyperparameters
 seasonality_prior_scale = st.sidebar.slider('Seasonality Prior Scale', min_value=0.1, max_value=100.0, value=10.0, step=0.1)
 changepoint_prior_scale = st.sidebar.slider('Changepoint Prior Scale', min_value=0.001, max_value=10.0, value=0.05, step=0.001)
-badge(type="pypi", name="prophet")
 
 # Set hyperparameters
 model.seasonality_prior_scale = seasonality_prior_scale
