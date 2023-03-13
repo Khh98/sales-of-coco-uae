@@ -34,13 +34,20 @@ html_code= """
             margin: 0;
             padding: 0;
         }
-        #demo {
+        #background {
+            height: 100vh;
+            background-color: #5eb7d9;
+            background-image: url('your-image-url.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        #content {
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: #5eb7d9;
             color: white;
             font-family: Verdana, sans-serif;
         }
@@ -63,7 +70,8 @@ html_code= """
     </style>
 </head>
 <body>
-    <div id="demo">
+    <div id="background"></div>
+    <div id="content">
         <h1>Hello, I'm</h1>
         <h1>Karim Hazimeh</h1>
         <div class="text-block">a Data detective with a Masters in Business Analytics🕵🏻‍♀️.<br>I am passionate about utilizing my tech-savviness and business analytics expertise to uncover insights from data that guide end-users through the vast and ever-changing <b>sky of possibilities.</b></div>
@@ -75,18 +83,17 @@ html_code= """
     <script src="https://assets.website-files.com/5d932bf11608325eac058a21/5d93301de2a4d93ad0b1fe54_vanta.clouds.min.txt"></script>
     <script>
         VANTA.CLOUDS({
-            el: "#demo",
+            el: "#background",
             skyColor: 0x5eb7d9,
             cloudColor: 0xb1c2dc,
             cloudShadowColor: 0x1b3a57,
             sunColor: 0xff9c21,
             sunGlareColor: 0xfa6331,
-            sunlightColor: 0xfa9531
+            sunlightColor: 0xfa
         })
     </script>
 </body>
 </html>
-
         """
 
 
