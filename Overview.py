@@ -35,7 +35,7 @@ html_code= """
             padding: 0;
         }
         #background {
-            height: 60vh;
+            height: 100vh;
             background-color: #5eb7d9;
             background-image: url('your-image-url.jpg');
             background-repeat: no-repeat;
@@ -48,7 +48,7 @@ html_code= """
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: white;
+            color: black;
             font-family: Verdana, sans-serif;
         }
         h1 {
