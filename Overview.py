@@ -13,7 +13,7 @@ st.set_page_config(
 
 add_logo(pacclogo,height=190)
 
-col1, col2 = st.columns(35,1])
+col1, col2 = st.columns([3,1])
 with col1:
   mention(label="Get to know me first",icon="🧑🏻👇🏻",  #Some icons are available... like Streamlit!,
     url="https://www.linkedin.com/in/karimhazimeh",)
