@@ -35,7 +35,7 @@ html_code= """
             padding: 0;
         }
         #background {
-            height: 80vh;
+            height: 60vh;
             background-color: #5eb7d9;
             background-image: url('your-image-url.jpg');
             background-repeat: no-repeat;
@@ -98,23 +98,4 @@ html_code= """
 
 
 # Add the HTML code to the Streamlit app using st.components.v1.html
-st.components.v1.html(html_code,height=985 ,width=1000)
-
-
-#rain(
-    #emoji="🥳",
-    #font_size=54,
-    #falling_speed=5,
-    #animation_length="infinite",
-
-
- #EXTRAS   
-#from streamlit_extras.let_it_rain import rain
-#add_logo(pacclogo,height=200)
-
-#mention(label="An awesome Streamlit App",icon="streamlit",  # Some icons are available... like Streamlit!url="https://extras.streamlitapp.com",)
-#rain(
-    #emoji="🥳",
-    #font_size=54,
-    #falling_speed=5,
-    #animation_length="infinite",
+st.components.v1.html(html_code)
