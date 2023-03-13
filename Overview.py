@@ -57,7 +57,7 @@ html_code= """
                 font-size: 2rem;
             }
         </style>
-           <div>
+           <div class = 'wrapper'>
             <h1>Hello, I'm</h1>
             <h1>Karim Hazimeh</h1>
             <div class="text-block" style="font-family:Lucida Console"><br>a Data detective with a Masters in Business Analytics🕵🏻‍♀️.</br>I am passionate about utilizing my tech-savviness and business analytics expertise to uncover insights from data that guide end-users through the vast and ever-changing <b>sky of possibilities.<b></div>
