@@ -27,7 +27,7 @@ html_code= """
     <head>
         <meta charset="utf-8"/>
         <title> Hello</title>
-        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta content="Webflow" name="generator"/>
         <link href="https://assets.website-files.com/5d971c4989c88c0b4cca55cd/css/interactive-sky.webflow.c473bcb3c.css" rel="stylesheet" type="text/css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -38,7 +38,6 @@ html_code= """
                 }
             });
         </script>
-        <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
         <script type="text/javascript">
             !function(o, c) {
                 var n = c.documentElement
@@ -54,12 +53,14 @@ html_code= """
                  text-align: center;
                  margin-top: 5px;
 }
+            h1:first-child {
+                font-size: 2rem;
             }
         </style>
     </head>
     <body>
         <div id="demo" class="wrapp">
-            <h1 style="font-size:15px;line-height:1.5em;">Hello, I'm</h1>
+            <h1>Hello, I'm</h1>
             <h1>Karim Hazimeh</h1>
             <div class="text-block" style="font-family:Lucida Console"><br>a Data detective with a Masters in Business Analytics🕵🏻‍♀️.</br>I am passionate about utilizing my tech-savviness and business analytics expertise to uncover insights from data that guide end-users through the vast and ever-changing <b>sky of possibilities.<b></div>
             <br><a href="https://drive.google.com/uc?export=download&id=1__wsAULlJ3uoAYil0B77UODwsgWeEF5x" download><button style="background-color: white; color: #222; font-weight: bold; border: 2px solid #222; padding: 10px 20px; border-radius: 5px;">Download CV</button></a></br>
