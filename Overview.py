@@ -35,7 +35,7 @@ html_code= """
             padding: 0;
         }
         #background {
-            height: 100vh;
+            height: 80vh;
             background-color: #5eb7d9;
             background-image: url('your-image-url.jpg');
             background-repeat: no-repeat;
