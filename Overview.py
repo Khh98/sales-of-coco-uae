@@ -3,15 +3,14 @@ from streamlit_extras.app_logo import add_logo
 from streamlit_extras.mention import mention
 from streamlit_extras.switch_page_button import switch_page
 
-url1="https://drive.google.com/file/d/18ziRTBFkc09CITnEHMbLk9vjX-4TNFcV/view?usp=sharing"
-logo='https://drive.google.com/uc?export=download&id='+url1.split('/')[-2]
+url1="https://drive.google.com/file/d/12NQM8wBzIl3XwJqAGLZnZ3r3El9A6hyq/view?usp=sharing"
+pacclogo='https://drive.google.com/uc?export=download&id='+url1.split('/')[-2]
+
 st.set_page_config(
      page_title="Analytical Tool",
      layout="wide",
-     page_icon= logo,
+     page_icon= pacclogo,
     initial_sidebar_state="expanded")
-
-add_logo(logo,height=90)
 
 col1, col2 = st.columns([5,1])
 with col1:
