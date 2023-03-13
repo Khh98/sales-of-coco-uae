@@ -11,7 +11,7 @@ st.set_page_config(
      page_icon= logo,
     initial_sidebar_state="expanded")
 
-add_logo(logo,height=190)
+add_logo(logo,height=90)
 
 col1, col2 = st.columns([5,1])
 with col1:
