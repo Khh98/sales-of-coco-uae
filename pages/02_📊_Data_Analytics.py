@@ -76,7 +76,7 @@ Look at the tooltips to understand how each parameter is impacting forecasts.
    # Filter the dataframe to 2000 so that it does not crash the browser
     sales_product_filtered = sales_product.sort_values(by='Net Amount', ascending=False).head(2000)
     #col1, col2, col3 = st.columns([3,3,1])
-    year = st.sidebar.selectbox("Select a year",(sales_product.Year.unique()))
+    year = st.radio("Select a year",(sales_product.Year.unique()))
     from streamlit_extras.metric_cards import style_metric_cards
     avg_sales = np.mean(sales_product[sales_product['Year'] == year]['Net Amount'])
     avg_profit = np.mean(sales_product[sales_product['Year'] == year]['Net Gross Profit'])
