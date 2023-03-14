@@ -93,4 +93,4 @@ html_code= """
 
 
 # Add the HTML code to the Streamlit app using st.components.v1.html
-st.components.v1.html(html_code,height=919 ,width=985)
+st.components.v1.html(html_code,height=919 ,width=1000)
