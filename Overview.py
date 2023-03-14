@@ -60,7 +60,7 @@ html_code= """
     <style>
             .text-block {
                  text-align: center;
-                 margin-top: 15px;
+                 margin-top: 1px;
 }
             }
         </style>
