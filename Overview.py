@@ -62,7 +62,6 @@ html_code= """
             <h1 style="font-size:15px;line-height:1.5em;">Hello, I'm</h1>
             <h1>Karim Hazimeh</h1>
             <div class="text-block"><br><b>a Data detective with a Masters in Business Analytics🕵🏻‍♀️.</b><br></br><br>I am passionate about utilizing my tech-savviness and business analytics expertise to uncover insights from data <br>that guide end-users through the vast and ever-changing <b><i>sky of possibilities.</i></b></br></div>
-            <br><a href="https://drive.google.com/uc?export=download&id=1__wsAULlJ3uoAYil0B77UODwsgWeEF5x" download><button style="background-color: white; color: #222; font-weight: bold; border: 2px solid #222; padding: 10px 20px; border-radius: 5px;">Download CV</button></a></br>
         </div>
         <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://assets.website-files.com/5d971c4989c88c0b4cca55cd/js/webflow.1bc56dc86.js" type="text/javascript"></script>
