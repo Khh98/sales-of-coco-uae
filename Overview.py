@@ -4,14 +4,14 @@ from streamlit_extras.mention import mention
 from streamlit_extras.switch_page_button import switch_page
 
 url1="https://drive.google.com/file/d/16vXzu_5wm5EhzgoOCnMRKmHMyIzez93_/view?usp=share_link"
-pacclogo='https://drive.google.com/uc?export=download&id='+url1.split('/')[-2]
+klogo='https://drive.google.com/uc?export=download&id='+url1.split('/')[-2]
 
 st.set_page_config(
      page_title="Analytical Tool",
      layout="wide",
-     page_icon= pacclogo,
+     page_icon= klogo,
     initial_sidebar_state="expanded")
-add_logo(pacclogo,height=120)
+add_logo(klogo,height=120)
 col1, col2 = st.columns([5,1])
 with col1:
   mention(label="Get to know me first",icon="🧑🏻👇🏻",  #Some icons are available... like Streamlit!,
