@@ -10,20 +10,21 @@ from streamlit_toggle import st_toggle_switch
 from streamlit_extras.app_logo import add_logo
 from streamlit_card import card
 
-url1="https://drive.google.com/file/d/12NQM8wBzIl3XwJqAGLZnZ3r3El9A6hyq/view?usp=sharing"
-pacclogo='https://drive.google.com/uc?export=download&id='+url1.split('/')[-2]
+url1="https://drive.google.com/file/d/16vXzu_5wm5EhzgoOCnMRKmHMyIzez93_/view?usp=share_link"
+klogo='https://drive.google.com/uc?export=download&id='+url1.split('/')[-2]
+
 
 st.set_page_config(
      page_title="Analytical Tool",
      layout="wide",
-     page_icon= pacclogo,
+     page_icon= klogo,
     initial_sidebar_state="expanded")
 
-url1="https://drive.google.com/file/d/12NQM8wBzIl3XwJqAGLZnZ3r3El9A6hyq/view?usp=sharing"
-pacclogo='https://drive.google.com/uc?export=download&id='+url1.split('/')[-2]
+url1="https://drive.google.com/file/d/16vXzu_5wm5EhzgoOCnMRKmHMyIzez93_/view?usp=share_link"
+klogo='https://drive.google.com/uc?export=download&id='+url1.split('/')[-2]
 
 
-add_logo(pacclogo,height=200)
+add_logo(klogo,height=130)
 
 hide_streamlit_style = """
             <style>
