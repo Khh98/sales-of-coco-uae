@@ -26,6 +26,14 @@ html_code= """
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+  body {
+    height: auto;
+    max-height: 100vh;
+    overflow: hidden;
+  }
+</style>
+
         <title> Hello</title>
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
         <meta content="Webflow" name="generator"/>
