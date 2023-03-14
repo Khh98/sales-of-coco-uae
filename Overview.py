@@ -11,7 +11,7 @@ st.set_page_config(
      layout="wide",
      page_icon= pacclogo,
     initial_sidebar_state="expanded")
-add_logo(pacclogo,height=220)
+add_logo(pacclogo,height=150)
 col1, col2 = st.columns([5,1])
 with col1:
   mention(label="Get to know me first",icon="🧑🏻👇🏻",  #Some icons are available... like Streamlit!,
