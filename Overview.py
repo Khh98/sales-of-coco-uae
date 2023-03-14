@@ -69,7 +69,7 @@ html_code= """
         <div id="demo" class="wrapp">
             <h1 style="font-size:15px;line-height:1.5em;">Hello, I'm</h1>
             <h1>Karim Hazimeh</h1>
-            <div class="text-block"><br><b>a Data detective with a Masters in Business Analytics🕵🏻‍♀️.</b><br></br><br>I am passionate about utilizing my tech-savviness and business analytics expertise to uncover insights from data <br>that guide end-users through the vast and ever-changing <b><i>sky of possibilities.</i></b></br></div>
+            <div class="text-block" style = "font-size-family:Monaco"><br><b>a Data detective with a Masters in Business Analytics🕵🏻‍♀️.</b><br></br><br>I am passionate about utilizing my tech-savviness and business analytics expertise to uncover insights from data <br>that guide end-users through the vast and ever-changing <b><i>sky of possibilities.</i></b></br></div>
         </div>
         <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://assets.website-files.com/5d971c4989c88c0b4cca55cd/js/webflow.1bc56dc86.js" type="text/javascript"></script>
