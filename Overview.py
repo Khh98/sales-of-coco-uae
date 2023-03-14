@@ -29,7 +29,7 @@ html_code= """
         <style>
   body {
     height: auto;
-    max-height: 100vh;
+    max-height: 200vh;
     overflow: hidden;
   }
 </style>
