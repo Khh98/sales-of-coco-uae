@@ -49,7 +49,7 @@ df = pd.read_csv('sales_df.csv')
 holidays_df = pd.read_csv('holidays.csv')
 
 # Convert the holiday dates to datetime objects
-holidays_df['date'] = pd.to_datetime(holidays_df['date'])
+holidays_df['date'] = pd.to_datetime(holidays_df['date'], format="%d/%m/%Y")
 holidays_df = holidays_df.rename(columns={'date':'ds','Holiday':'holiday'})
 
 
