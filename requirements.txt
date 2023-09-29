@@ -1,6 +1,6 @@
 plotly-express==0.4.1
-prophet==1.1.2
-holidays==0.24
+prophet==1.1.4
+holidays==0.33
 requests-html==0.10.0
 streamlit==1.19.0
 streamlit-aggrid==0.3.3
