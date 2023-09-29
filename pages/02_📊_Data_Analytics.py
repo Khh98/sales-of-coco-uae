@@ -214,7 +214,7 @@ with tab2:
     "In the second line plot, we noticed that the relationship between net cost amount and net gross profit is weaker than planned however the increase is overall available but as a suggestion, Coco uae may need to **reduce** its costs to increase more their net gross profit."
 )
         # Calculate the correlation matrix
-    Budget_corr= Budget.corr()
+    Budget_corr= Budget.drop(columns=['Date']).corr()
     corr_matrix2 = df_2022[['Net Initial Price','Net Price','Net Cost Amount','Net Discount Amount','Net Amount','Net Gross Profit']].corr()
     # Define options for selectbox
     corr_options = {
