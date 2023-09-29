@@ -1,7 +1,6 @@
 import pandas as pd
 from prophet import Prophet
-from prophet.forecaster import Prophet
-from holidays.countries import Entity
+from holidays.countries import United Arab Emirates
 import streamlit as st
 import numpy as np
 from sklearn.metrics import mean_absolute_error, mean_squared_error
