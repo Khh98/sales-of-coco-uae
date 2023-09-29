@@ -1,6 +1,6 @@
 import pandas as pd
 from prophet import Prophet
-from prophet.make_holidays import get_holiday_names, make_holidays_df
+#from prophet.make_holidays import get_holiday_names, make_holidays_df
 import streamlit as st
 import numpy as np
 from sklearn.metrics import mean_absolute_error, mean_squared_error
