@@ -112,8 +112,6 @@ custom_holidays = holidays_df.rename(columns={'date': 'ds', 'Holiday': 'holiday'
 # Set holiday parameters in the Prophet model
 if enable_holidays:
     model.add_country_holidays(country_name='AE')
-    if custom_holidays is not None and not custom_holidays.empty:
-        model.add_holidays(custom_holidays)
 
 
 
