@@ -52,6 +52,7 @@ holidays_df = pd.read_csv('holidays.csv')
 holidays_df['date'] = pd.to_datetime(holidays_df['date'])
 holidays_df = holidays_df.rename(columns={'date':'ds','Holiday':'holiday'})
 
+
 expander = st.expander("Click me if you want to know more🙋🏻‍♂️")
 expander.markdown("""Interpreting the Forecast Plot:
 
@@ -105,8 +106,15 @@ mode = st.sidebar.selectbox('Seasonality mode:',['multiplicative','additive'])
 # Create and fit model
 model = Prophet(yearly_seasonality=True, weekly_seasonality=True, daily_seasonality=False, seasonality_mode=mode,holidays=holidays)
 # Set holiday parameters
+# Assuming your holidays_df has 'ds' (date) and 'holiday' (event) columns
+custom_holidays = holidays_df.rename(columns={'date': 'ds', 'Holiday': 'holiday'})
+
+# Set holiday parameters in the Prophet model
 if enable_holidays:
     model.add_country_holidays(country_name='AE')
+    if custom_holidays is not None and not custom_holidays.empty:
+        model.add_holidays(custom_holidays)
+
 
 
 # Filter by selected category
