@@ -54,7 +54,7 @@ holidays_df = holidays_df.rename(columns={'date':'ds','Holiday':'holiday'})
 
 
 expander = st.expander("Click me if you want to know more🙋🏻‍♂️")
-expander.markdown("""Interpreting the Forecast Plot:
+expander.markdown("""<b>Interpreting the Forecast Plot:</b>
 
 <ul>
   <li>The blue line represents the predicted values of the time series.</li>
