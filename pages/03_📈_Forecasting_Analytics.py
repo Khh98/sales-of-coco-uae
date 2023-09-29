@@ -1,5 +1,5 @@
 import pandas as pd
-from prophet import Prophet
+#from prophet import Prophet
 from prophet.forecaster import Prophet
 from holidays.countries import Turkey  
 import streamlit as st
