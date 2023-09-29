@@ -105,9 +105,6 @@ category = st.sidebar.selectbox('Select Category:', df['category'].unique())
 mode = st.sidebar.selectbox('Seasonality mode:',['multiplicative','additive'])
 # Create and fit model
 model = Prophet(yearly_seasonality=True, weekly_seasonality=True, daily_seasonality=False, seasonality_mode=mode,holidays=holidays)
-# Set holiday parameters
-# Assuming your holidays_df has 'ds' (date) and 'holiday' (event) columns
-custom_holidays = holidays_df.rename(columns={'date': 'ds', 'Holiday': 'holiday'})
 
 # Set holiday parameters in the Prophet model
 if enable_holidays:
