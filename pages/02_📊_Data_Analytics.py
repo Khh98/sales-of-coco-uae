@@ -5,11 +5,12 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 from streamlit_extras.app_logo import add_logo
+from streamlit_extras.metric_cards import style_metric_cards
+import warnings
 
-
-
+warnings.filterwarnings('ignore')
 # Imported Budget.csv
-Budget = pd.read_csv('Budget.csv')
+Budget = pd.read_csv(r"C:\Users\karim\OneDrive\Desktop\Streamlit Apps\sales-of-coco-uae-main\sales-of-coco-uae-main\pages\Budget.csv")
 
 
 
@@ -46,7 +47,7 @@ show_streamlit_style = """
 st.markdown(show_streamlit_style, unsafe_allow_html=True)
 
 #function to read large data with caching
-@st.cache_data()
+@st.cache(allow_output_mutation=True)
 def load_data(path):
     df=pd.read_csv(path)
     return df
@@ -76,109 +77,87 @@ Look at the tooltips to understand how each parameter is impacting forecasts.
     sales_product['Month'] = sales_product['Month'].dt.month_name().str.slice(stop=3)
    # Filter the dataframe to 2000 so that it does not crash the browser
     sales_product_filtered = sales_product.sort_values(by='Net Amount', ascending=False).head(2000)
-    #col1, col2, col3 = st.columns([3,3,1])
-    year = st.select_slider("",options=(sales_product.Year.unique()))
-    from streamlit_extras.metric_cards import style_metric_cards
+    col11, col12, col13 = st.columns([1, 1, 1])
+    with col11:
+     year = st.selectbox("Select Year", sales_product.Year.unique())
+    with col13:
+     range_min = 5
+     range_max = 40
+     num_prods = st.slider("Top n to display:", range_min, range_max, 5)
     avg_sales = np.mean(sales_product[sales_product['Year'] == year]['Net Amount'])
     avg_profit = np.mean(sales_product[sales_product['Year'] == year]['Net Gross Profit'])
     col1, col2, col3 = st.columns(3)
     with col1:
-     col1.metric(label=f"Average Sales in {year}", value=round(avg_sales), delta=round(avg_sales)-80)
+     col1.metric(label=f"Average Sales in {year}", value=round(avg_sales), delta=round(avg_sales) - 80)
     with col2:
-     col3.metric(label=f"Average Profit in {year}", value=round(avg_profit), delta=round(avg_profit)-80)
-    #with col3:
-     #col3.selectbox("Select a Year",(sales_product.Year.unique()), key='onlyone')
-    style_metric_cards(border_left_color = '#8B8C8C')
+     col3.metric(label=f"Average Profit in {year}", value=round(avg_profit), delta=round(avg_profit) - 80)
 
-    df_year=sales_product[sales_product['Year']==year]
+    style_metric_cards(border_left_color='red')
+
+    df_year = sales_product[sales_product['Year'] == year]
     col1, col2, col3 = st.columns([5, 1, 4])
-
     with col1:
-        #time series
-            df_sales = df_year.groupby('Transaction Date')['Net Amount'].sum().reset_index()
-            df_sales = df_sales.set_index('Transaction Date')
-            fig4 = px.line(df_sales, x=df_sales.index, y='Net Amount', line_shape='linear')
-            fig4.update_layout(
-    title=f'Time-series graph representing Net Sales of cocouae in {year}',
-    xaxis=dict(showgrid=False), 
-    yaxis=dict(showgrid=True), 
-    legend=dict(orientation='v'), 
-    paper_bgcolor='#FFFFFF', 
-    plot_bgcolor='#FFFFFF',  # set plot background color to white
-    xaxis_rangeslider=dict(bgcolor='white'),  # set rangeslider background color
-
-)   
-
-            st.plotly_chart(fig4,use_container_width=True)
+    # Time series
+     df_sales = df_year.groupby('Transaction Date')['Net Amount'].sum().reset_index()
+     df_sales = df_sales.set_index('Transaction Date')
+     fig4 = px.line(df_sales, x=df_sales.index, y='Net Amount', line_shape='linear')
+     fig4.update_layout(
+        title=f'Time-series graph representing Net Sales of cocouae in {year}',
+        xaxis=dict(showgrid=False),
+        yaxis=dict(showgrid=True),
+        legend=dict(orientation='v'),
+        paper_bgcolor='#FFFFFF',
+        plot_bgcolor='#FFFFFF',
+        xaxis_rangeslider=dict(bgcolor='white'),
+    )
+     st.plotly_chart(fig4, use_container_width=True)
     with col3:
-        df_year = df_year[df_year['Net Amount'] >=0]
-        df_year2=df_year.groupby(['Group','Year']).agg(
-    sales=('Net Amount', 'sum')
-).sort_values(by='sales', ascending=False).reset_index()
-        fig1 = px.bar(df_year2, x='Year', y='sales', color='Group')
-        fig1.update_layout(
-    title=f'Distribution of fashion groups in {year}', 
-    xaxis = dict(
-        showgrid=False, 
-    ), 
-    yaxis = dict(
-        title='Sales', 
-        showgrid=False
-    ),
-    legend = dict(
-        orientation='v'
-    ), 
-    barmode='group', 
-    paper_bgcolor='#FFFFFF'
-)
-            # set width and height of the plot
-            #fig1.update_layout(width=1200, height=800)
-        st.plotly_chart(fig1,use_container_width=True)
-
+     df_year = df_year[df_year['Net Amount'] >= 0]
+     df_year2 = df_year.groupby(['Group', 'Year']).agg(
+        sales=('Net Amount', 'sum')
+     ).sort_values(by='sales', ascending=False).reset_index()
+     df_year2 = df_year2.head(num_prods)
+    
+     fig1 = px.bar(df_year2, x='sales', y='Group', orientation='h', text='sales')
+     fig1.update_layout(
+        title=f'Distribution of top {num_prods} fashion groups in {year}',
+        xaxis=dict(showgrid=False, title='Sales'),
+        yaxis=dict(title='Group', showgrid=False),
+        legend=dict(orientation='h'),
+        paper_bgcolor='#FFFFFF'
+    )
+     fig1.update_traces(texttemplate='%{text:.2s}', textposition='inside', insidetextanchor='middle')
+     st.plotly_chart(fig1, use_container_width=True)
     col1, col2, col3 = st.columns([5, 1, 4])
-
     with col1:
-            viz_df =sales_product.groupby(['Month','Year','Supp_Story'], as_index=False).agg(
-            sales=('Net Amount', 'sum')
-            ).sort_values(by='sales', ascending=False)
-            viz_df = viz_df[viz_df['sales']>0]
-            ordered_months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] #writing month in order since plotly uses alphabetical order
-            viz_df['to_sort']=viz_df['Month'].apply(lambda x:ordered_months.index(x))
-            viz_df = viz_df.sort_values('to_sort')
-            fig3 = px.bar(viz_df[viz_df['Year'] == year],x='Month', y='sales',color='Supp_Story')
-            fig3.update_layout(
-    title=f'Monthly sales per category in {year}',
-    xaxis = dict(
-    	title='Month',
-        showgrid=False, 
-    ), 
-    yaxis = dict(
-        title='Sales', 
-        showgrid=False
-    ), 
-    legend = dict(
-        orientation='v'
-    ),  
-    paper_bgcolor='#FFFFFF'
-)
-            # set width and height of the plot
-            #fig3.update_layout(width=1200, height=800)
-            st.plotly_chart(fig3,use_container_width=True)
-
+     viz_df = sales_product.groupby(['Month', 'Year', 'Supp_Story'], as_index=False).agg(
+        sales=('Net Amount', 'sum')
+     ).sort_values(by='sales', ascending=False)
+     viz_df = viz_df[viz_df['sales'] > 0]
+     ordered_months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+     viz_df['to_sort'] = viz_df['Month'].apply(lambda x: ordered_months.index(x))
+     viz_df = viz_df.sort_values('to_sort')
+     viz_df = viz_df[viz_df['Year'] == year].sort_values('sales', ascending=False).head(num_prods)
+     fig3 = px.bar(viz_df, x='Month', y='sales', color='Supp_Story')
+     fig3.update_layout(
+        title=f'Monthly sales per category in {year}',
+        xaxis=dict(title='Month', showgrid=False),
+        yaxis=dict(title='Sales', showgrid=False),
+        legend=dict(orientation='v'),
+        paper_bgcolor='#FFFFFF'
+    )
+     st.plotly_chart(fig3, use_container_width=True)
 
     with col3:
-              fig2 = px.pie(sales_product[sales_product['Year'] == year], values='Net Amount', names='Store')
-              fig2.update_layout(
-     title=f'Sales per store in {year}',  
-     yaxis = dict(
-     ), 
-     legend = dict(
-        orientation='v'
-     ), 
-     barmode='group', 
-     paper_bgcolor='#FFFFFF'
-)
-              st.plotly_chart(fig2,use_container_width=True)
+     df_pie = sales_product[sales_product['Year'] == year].sort_values('Net Amount', ascending=False).head(num_prods)
+     fig2 = px.pie(df_pie, values='Net Amount', names='Store')
+     fig2.update_layout(
+        title=f'Sales per store in {year}',
+        yaxis=dict(),
+        legend=dict(orientation='v'),
+        paper_bgcolor='#FFFFFF'
+    )
+     st.plotly_chart(fig2, use_container_width=True)
 
 with tab2:
     text = """
@@ -208,10 +187,10 @@ with tab2:
     #with st.expander("Show correlation",expanded=True):
 
     col1.write(
-   "As we can see in this section, Coco uae plans to get their profit margin from the cost of fashion sold and as the cost of fashion apparel **increases**, so should the profit margin."
+   "Coco UAE may need to **reduce** its costs to increase net gross profit is partially supported. However, the data suggests that while there is a general positive trend, the relationship is weak, indicating that factors other than cost reduction might be influencing gross profit."
 )
     col2.write(
-    "In the second line plot, we noticed that the relationship between net cost amount and net gross profit is weaker than planned however the increase is overall available but as a suggestion, Coco uae may need to **reduce** its costs to increase more their net gross profit."
+    "While there is a positive trend between net cost amount and net gross profit, the relationship is not very strong. This implies that factors other than cost reduction could be impacting gross profit.Coco UAE should explore **additional strategies** alongside cost reduction, such as optimizing sales, improving operational efficiencies, or enhancing product offerings, to boost net gross profit more effectively."
 )
     # Calculate the correlation matrix
     Budget_numeric = Budget.select_dtypes(include='number')
