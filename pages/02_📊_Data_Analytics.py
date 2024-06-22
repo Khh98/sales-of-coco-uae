@@ -10,7 +10,7 @@ import warnings
 
 warnings.filterwarnings('ignore')
 # Imported Budget.csv
-Budget = pd.read_csv(r"C:\Users\karim\OneDrive\Desktop\Streamlit Apps\sales-of-coco-uae-main\sales-of-coco-uae-main\pages\Budget.csv")
+Budget = pd.read_csv("Budget.csv")
 
 
 
